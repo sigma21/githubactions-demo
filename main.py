@@ -9,7 +9,7 @@ very_long_variable_name=1
 if very_long_variable_name is not None and \
  very_long_variable_name > 0 :
  z = 'hello '+'world'
-else:
+else:   
  world = 'world'
  
 # fmt: on
@@ -17,4 +17,4 @@ regular_formatting = [
     0,  1,  2,
     3,  4,  5,
     6,  7,  8,
-]
+]      
