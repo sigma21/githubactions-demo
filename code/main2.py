@@ -59,3 +59,6 @@ if sdfasdf:
 
 x = 2
 y = 43
+
+
+x = 4

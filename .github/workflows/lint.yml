@@ -27,7 +27,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Echo changed .py files
       run: |
-        echo $(git diff --name-only --diff-filter=d HEAD^ | grep -E "(.py$)")
+        echo $(git diff --name-only --diff-filter=d origin/remotes/main HEAD^ | grep -E "(.py$)")
     - name: Lint with pylint
       run: |
-        pylint $(git diff --name-only --diff-filter=d HEAD^ | grep -E "(.py$)")
+        pylint $(git diff --name-only --diff-filter=d origin/remotes/main HEAD^ | grep -E "(.py$)")

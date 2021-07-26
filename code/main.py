@@ -45,3 +45,5 @@ globalsgd
 g
 
 somenewline = 1
+
+d = 2
