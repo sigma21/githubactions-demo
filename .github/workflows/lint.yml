@@ -37,11 +37,11 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     needs: build_and_checkout
-    # if: ${{ needs.build_and_checkout.outputs.changes }}
+    # if: ${{ jobs.build_and_checkout.outputs.changes }}
     steps:
       - name: Echo changed files
         run: |
-          echo ${{ needs.build_and_checkout.outputs.changes }}
+          echo ${{ jobs.build_and_checkout.outputs.changes }}
       - name: Lint with pylint
         run: |
-          pylint ${{ needs.build_and_checkout.outputs.changes }}
+          pylint ${{ jobs.build_and_checkout.outputs.changes }}
