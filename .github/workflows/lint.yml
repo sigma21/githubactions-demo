@@ -25,6 +25,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install pylint
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Echo changed .py files
+      run: |
+        echo $(git diff --name-only --diff-filter=d HEAD^ | grep -E "(.py$)")
     - name: Lint with pylint
       run: |
         pylint $(git diff --name-only --diff-filter=d HEAD^ | grep -E "(.py$)")

@@ -55,3 +55,7 @@ s = abs(a["val"]) // 9
 
 if sdfasdf:
     xvxc = sdfsdf
+
+
+x = 2
+y = 43
