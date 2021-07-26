@@ -12,8 +12,8 @@ on:
 jobs:
   build_and_checkout:
     runs-on: ubuntu-latest
-    outputs:
-      changedfiles: ${{ steps.changes.outputs.changedfiles }}
+    # outputs:
+    #   changedfiles: ${{ steps.changes.outputs.changedfiles }}
 
     steps:
     - name: Checkout out
@@ -39,7 +39,6 @@ jobs:
 
 
     - name: Echo changed .py files
-      id: changes
       run: |
         echo ${{ steps.changes.outputs.changedfiles }}
 
