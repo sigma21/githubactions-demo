@@ -1,3 +1,6 @@
+from typing import ClassVar
+
+
 x = {"a": 37, "b": 42, "c": 927}
 
 x = 123456789.123456789e123456789
@@ -42,9 +45,3 @@ globalsgd
 g
 
 somenewline = 1
-
-
-newline
-ds
-FileNotFoundErrorf
-setdsf
