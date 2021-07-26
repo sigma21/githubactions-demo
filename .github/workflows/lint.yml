@@ -15,9 +15,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-      with:
-        fetch-depth: 0
+    - uses: actions/checkout@v2
+      # with:
+      #   fetch-depth: 0
     - name: Set up Python 3.9
       uses: actions/setup-python@v2
       with:
@@ -28,8 +28,16 @@ jobs:
         pip install pylint
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Echo changed .py files
+      id: changes
+      # run: |
+        # echo $(git diff --name-only --diff-filter=d refs/remotes/origin/main..HEAD | grep -E "(.py$)")
       run: |
-        echo $(git diff --name-only --diff-filter=d refs/remotes/origin/main..HEAD | grep -E "(.py$)")
+        echo "::set-output name=changedfiles::$(git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep .py$)"
+
+
     - name: Lint with pylint
+      if: ${{ changes.outputs.changedfiles }}
+      # run: |
+      #   pylint $(git diff --name-only --diff-filter=d refs/remotes/origin/main..HEAD | grep -E "(.py$)")
       run: |
-        pylint $(git diff --name-only --diff-filter=d refs/remotes/origin/main..HEAD | grep -E "(.py$)")
+        pylint ${{ changes.outputs.changedfiles }}
