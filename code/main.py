@@ -24,3 +24,13 @@ regular_formatting = [
 
 
 newvar = 3
+
+D = 1
+
+czvxv = 45
+
+
+safd = 234
+
+
+adfsd = 456456
