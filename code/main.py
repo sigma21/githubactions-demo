@@ -40,3 +40,5 @@ fdgdf
 gd
 globalsgd
 g
+
+somenewline = 1
