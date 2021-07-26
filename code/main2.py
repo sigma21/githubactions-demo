@@ -53,5 +53,5 @@ a = func(2)
 s = abs(a["val"]) // 9
 
 
-# if sdfasdf:
-#     xvxc = sdfsdf
+if sdfasdf:
+    xvxc = sdfsdf
