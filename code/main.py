@@ -44,4 +44,3 @@ somenewline = 1
 somenewline = 1
 somenewline = 1
 d = 4
-w = 2
