@@ -45,3 +45,6 @@ somenewline = 1
 
 
 newline
+ds
+FileNotFoundErrorf
+setdsf
