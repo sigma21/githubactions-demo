@@ -42,3 +42,6 @@ globalsgd
 g
 
 somenewline = 1
+
+
+newline
