@@ -36,7 +36,7 @@ jobs:
 
 
     - name: Lint with pylint
-      if: ${{ changes.outputs.changedfiles }}
+      if: ${{ steps.changes.outputs.changedfiles }}
       # run: |
       #   pylint $(git diff --name-only --diff-filter=d refs/remotes/origin/main..HEAD | grep -E "(.py$)")
       run: |
