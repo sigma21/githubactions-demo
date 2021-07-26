@@ -41,8 +41,8 @@ jobs:
     - name: Echo changed .py files
       id: changes
       run: |
-        echo ${{ changedfiles }}
+        echo ${{ steps.changes.outputs.changedfiles }}
 
     - name: Lint
       run: |
-        pylint ${{ changedfiles }}
+        pylint ${{ steps.changes.outputs.changedfiles }}
