@@ -31,11 +31,18 @@ jobs:
         sudo apt-get update
         sudo apt-get install git
 
+    - name: Checkout ouroboros
+      uses: actions/checkout@v2
+      with:
+        repository: sigma21/ouroboros
+        token: ${{ secrets.OUROBOROS_PAT }} 
+        path: ouroboros
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install pylint
-        pip install --upgrade git+git://github.com/datasingularity/ouroboros.git
+        pip install --upgrade git+git://github.com/sigma21/ouroboros.git
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi/
 
     - name: Check changes
@@ -48,6 +55,6 @@ jobs:
       run: |
         echo ${{ steps.changes.outputs.changedfiles }}
 
-    # - name: Lint
-    #   run: |
-    #     pylint ${{ steps.changes.outputs.changedfiles }}
+    - name: Lint
+      run: |
+        pylint ${{ steps.changes.outputs.changedfiles }}
