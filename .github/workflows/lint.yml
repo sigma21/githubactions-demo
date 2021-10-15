@@ -38,20 +38,10 @@ jobs:
         pip install ./ouroboros
         pip list
 
-    - name: Check pwd
+    - name: Run filtering
       run: |
-        pwd
+        python -c "from ouroboros.feed_filter import apply_filter; apply_filter(mrd_file_path='./code/feed.json', target_schema_path='./code/target.json', out_path='./code/filtered_feed.json')"
 
-    - name: Check changes
-      id: changes
+    - name: Read filtered feed
       run: |
-        echo "::set-output name=changedfiles::$(git diff --name-only --diff-filter=ACMRT ${{ github.event.base.sha }} ${{ github.sha }} | grep .py$)"
-
-
-    - name: Echo changed .py files
-      run: |
-        echo ${{ steps.changes.outputs.changedfiles }}
-
-    - name: Lint
-      run: |
-        pylint ${{ steps.changes.outputs.changedfiles }}
+        cat ./code/filtered_feed.json/

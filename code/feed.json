@@ -1,0 +1,54 @@
+{
+    "version": "listing/v1",
+    "entities": [
+        {
+            "cost_centers": [
+                {
+                    "cost_center_uri": "http://rdf.demo.org#95d9fd0e-75f3-46fe-8315-1bc76495b2d3",
+                    "country": "United Kingdom",
+                    "xyz": false
+                },
+                {
+                    "cost_center_uri": "http://rdf.demo.org#a40d9544-ed93-4cf6-a6e8-8ea0ae2ef4ce",
+                    "country": "Netherlands",
+                    "xyz": true
+                }
+            ],
+            "full_name": "Vito Corleone",
+            "is_employee": "Employee",
+            "level": "Executive",
+            "level_description": "Having administrative or managerial responsibility",
+            "level_uri": "http://rdf.demo.org#c9e9a848920877e76685b2e4e76de38d",
+            "person_uri": "http://rdf.demo.org#4a2d7b63-276d-4126-8e58-2e85e08d88f4"
+        },
+        {
+            "cost_centers": [
+                {
+                    "cost_center_uri": "http://rdf.demo.org#b369d8a9-a775-4471-a388-28f36e032e49",
+                    "country": "Netherlands",
+                    "xyz": false
+                },
+                {
+                    "cost_center_uri": "http://rdf.demo.org#d8d799e4-363a-4699-8e2f-cb7f5b02d794",
+                    "country": "France",
+                    "xyz": true
+                }
+            ],
+            "full_name": "James Bond",
+            "is_employee": "Former Employee",
+            "person_uri": "http://rdf.demo.org#5d5e029c-8b97-4a3f-9ecd-cd8b7e0f8f17"
+        },
+        {
+            "cost_centers": [
+                {
+                    "cost_center_uri": "http://rdf.demo.org#8f0c374d-26ae-4bb8-b43c-39f6980ec16d",
+                    "country": "Netherlands",
+                    "xyz": false
+                }
+            ],
+            "full_name": "Mia Wallas",
+            "is_employee": "Employee",
+            "person_uri": "http://rdf.demo.org#cd8bc0e5-278e-4aa6-b0e8-61b3eb8d3241"
+        }
+    ]
+}

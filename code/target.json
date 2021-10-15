@@ -1,0 +1,103 @@
+{
+    "iri": "http://rdf.demo.org/dl#personAnalytics",
+    "application": "http://rdf.demo.org/dl#analytics",
+    "label": "person_analytics",
+    "root": {
+        "iri": "http://rdf.demo.org/dl#personAnalytics_Person",
+        "class": "http://rdf.demo.org/person#Person",
+        "attribute": "person_uri",
+        "projection": [
+            {
+                "predicate": "http://rdf.demo.org/person#name",
+                "attribute": "full_name",
+                "functional": true,
+                "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                "filter": [
+                    "Vito Corleone",
+                    "James Bond"
+                ]
+            }
+        ],
+        "links": [
+            {
+                "predicate": "http://rdf.demo.org/person#hasLevel",
+                "functional": true,
+                "filter": [],
+                "to": {
+                    "iri": "http://rdf.demo.org/dl#personAnalytics_Level",
+                    "class": "http://rdf.demo.org/person#Level",
+                    "attribute": "level_uri",
+                    "projection": [
+                        {
+                            "predicate": "http://rdf.demo.org/person#levelLabel",
+                            "attribute": "level",
+                            "functional": true,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        },
+                        {
+                            "predicate": "http://rdf.demo.org/person#levelDescription",
+                            "attribute": "level description",
+                            "functional": true,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    ]
+                }
+            },
+            {
+                "predicate": "http://rdf.demo.org/person#hasRole",
+                "functional": true,
+                "filter": [],
+                "to": {
+                    "iri": "http://rdf.demo.org/dl#personAnalytics_Role",
+                    "class": "http://rdf.demo.org/person#Role",
+                    "projection": [
+                        {
+                            "predicate": "http://rdf.demo.org/person#roleLabel",
+                            "attribute": "is_employee",
+                            "functional": true,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    ]
+                }
+            },
+            {
+                "predicate": "http://rdf.demo.org/person#hasCostCenter",
+                "group": "cost_centers",
+                "to": {
+                    "iri": "http://rdf.demo.org/dl#personAnalytics_Account",
+                    "class": "http://rdf.demo.org/account#Account",
+                    "attribute": "cost_center_uri",
+                    "projection": [
+                        {
+                            "predicate": "http://rdf.demo.org/account#linkedCompanyCreditCard",
+                            "attribute": "xyz",
+                            "functional": true,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    ],
+                    "links": [
+                        {
+                            "predicate": "http://rdf.demo.org/account#country",
+                            "functional": true,
+                            "filter": [],
+                            "to": {
+                                "iri": "http://rdf.demo.org/dl#personAnalytics_Country",
+                                "class": "http://rdf.demo.org/geo#Country",
+                                "projection": [
+                                    {
+                                        "predicate": "http://rdf.demo.org/geo#mainName",
+                                        "functional": true,
+                                        "attribute": "country",
+                                        "filter": [
+                                            "Netherlands"
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
