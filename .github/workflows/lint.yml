@@ -42,6 +42,8 @@ jobs:
       run: |
         python -c "from ouroboros.feed_filter import apply_filter; apply_filter(mrd_file_path='./code/feed.json', target_schema_path='./code/target.json', out_path='./code/filtered_feed.json')"
 
-    - name: Read filtered feed
+    - name: Check and read content
       run: |
-        cat ./code/filtered_feed.json/
+        ls
+        ls ./code
+        cat ./code/filtered_feed.json
