@@ -39,4 +39,4 @@ safd = 234
 adfsd = 456456
 
 
-somenewline = 12
+somenewline=12
