@@ -39,7 +39,7 @@
 # adfsd = 456456
 
 
-somenewline = 1
+somenewline = 10
 somenewline = 1
 somenewline = 1
 somenewline = 1
