@@ -16,6 +16,6 @@ jobs:
       - name: Run step only if directory has been updated
 #         if: ${{ github.event_name == 'push' && github.event.compare }}
         # Replace 'path/to/directory/**' with the actual path to your directory
-        if: ${{ contains(github.event.compare, 'code/**') }}
+        if: ${{ contains(github.event.compare, 'githubactions-demo/code') }}
         run: |
           echo "Directory has been updated"
