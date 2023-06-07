@@ -1,9 +1,15 @@
 name: My Workflow
 
 on: [push, pull_request]
-  paths:
-    - 'terraform/**.tf'
-    - 'terraform/**.tfvars'
+  push:
+    paths:
+      - 'terraform/**'
+      - 'terraform/**.tfvars'
+  pull_request:
+    paths:
+      - 'terraform/**'
+      - 'terraform/**.tfvars'
+
 
 jobs:
   myJob:
