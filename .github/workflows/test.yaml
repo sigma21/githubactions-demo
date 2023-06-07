@@ -2,8 +2,9 @@ name: My Workflow
 
 on:
   push:
-    branches:
-      - main
+    paths:
+      - 'terraform/**.tf'
+      - 'terraform/**.tfvars'
 
 jobs:
   myJob:
@@ -12,10 +13,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      
+      - name: Echo
+        run: echo "workflow triggered"
 
-      - name: Run step only if directory has been updated
-#         if: ${{ github.event_name == 'push' && github.event.compare }}
-        # Replace 'path/to/directory/**' with the actual path to your directory
-        if: ${{ contains(github.event.compare, 'githubactions-demo/code') }}
-        run: |
-          echo "Directory has been updated"
+#       - name: Run step only if directory has been updated
+# #         if: ${{ github.event_name == 'push' && github.event.compare }}
+#         # Replace 'path/to/directory/**' with the actual path to your directory
+#         if: ${{ contains(github.event.compare, 'githubactions-demo/code') }}
+#         run: |
+#           echo "Directory has been updated"
