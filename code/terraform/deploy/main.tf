@@ -1,5 +1,5 @@
 provider "random" {
     key = "val"
-    key = "val"
+    key = "val."
 
 }
