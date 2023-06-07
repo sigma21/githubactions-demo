@@ -1,7 +1,7 @@
 name: My Workflow
 
 on: [push, pull_request]
-paths:
+  paths:
     - 'terraform/**.tf'
     - 'terraform/**.tfvars'
 
