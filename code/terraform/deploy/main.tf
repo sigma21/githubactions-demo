@@ -1,1 +1,3 @@
-provider "random" {}
+provider "random" {
+    key = "value"
+}
