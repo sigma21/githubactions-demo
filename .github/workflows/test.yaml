@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - 'code/terraform/deploy/**.tf'
-      - 'code/terraform/**.tfvars'
+      - 'code/terraform/vars/**.tfvars'
 
 jobs:
   myJob:
