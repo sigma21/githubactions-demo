@@ -1,6 +1,6 @@
 name: My Workflow
 
-on: [push, pull_request]
+on:
   push:
     paths:
       - 'terraform/**'
