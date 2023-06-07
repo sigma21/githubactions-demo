@@ -3,11 +3,11 @@ name: My Workflow
 on:
   push:
     paths:
-      - 'terraform/**'
+      - 'terraform/**.tf'
       - 'terraform/**.tfvars'
   pull_request:
     paths:
-      - 'terraform/**'
+      - 'terraform/**.tf'
       - 'terraform/**.tfvars'
 
 

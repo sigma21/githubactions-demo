@@ -1,3 +1,4 @@
 provider "random" {
-    key = "value"
+    key = "val"
+
 }
