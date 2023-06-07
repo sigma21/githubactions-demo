@@ -3,13 +3,8 @@ name: My Workflow
 on:
   push:
     paths:
-      - '$GITHUB_WORKSPACE/terraform/deploy/**.tf'
-      - 'terraform/**.tfvars'
-  pull_request:
-    paths:
-      - 'terraform/**.tf'
-      - 'terraform/**.tfvars'
-
+      - 'code/terraform/deploy/**.tf'
+      - 'code/terraform/**.tfvars'
 
 jobs:
   myJob:
