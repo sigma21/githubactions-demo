@@ -5,6 +5,10 @@ on:
     paths:
       - 'code/terraform/deploy/**.tf'
       - 'code/terraform/vars/**.tfvars'
+  pull_request:
+    paths:
+      - 'terraform/deploy/**.tf'
+      - 'terraform/vars/**.tfvars'
 
 jobs:
   myJob:
