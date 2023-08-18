@@ -1,0 +1,26 @@
+name: Detect and Echo Changed Files
+
+on:
+  push:
+    branches:
+      - main # Adjust as per your primary branch name
+
+jobs:
+  list-changed-files:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Get list of changed files
+        id: get-changed-files
+        run: |
+          files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
+          echo "CHANGED_FILES=$files" >> $GITHUB_ENV
+
+      - name: Echo changed files
+        run: |
+          for file in $CHANGED_FILES; do
+            echo "Changed file: $file"
+          done
