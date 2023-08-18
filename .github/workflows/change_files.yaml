@@ -3,7 +3,9 @@ name: Detect and Echo Changed Files
 on:
   push:
     branches:
-      - main # Adjust as per your primary branch name
+      - main
+    paths:
+      - code/terraform/
 
 jobs:
   list-changed-files:
