@@ -29,7 +29,7 @@ jobs:
 
       - name: Get and echo list of changed files
         run: |
-          files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
+          files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- code/deploy)
           for file in $files; do
             echo "Changed file: $file"
           done
