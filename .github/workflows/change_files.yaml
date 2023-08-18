@@ -15,14 +15,21 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Get list of changed files
-        id: get-changed-files
+      # - name: Get list of changed files
+      #   id: get-changed-files
+      #   run: |
+      #     files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
+      #     echo "CHANGED_FILES=$files" >> $GITHUB_ENV
+
+      # - name: Echo changed files
+      #   run: |
+      #     for file in $CHANGED_FILES; do
+      #       echo "Changed file: $file"
+      #     done
+
+      - name: Get and echo list of changed files
         run: |
           files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
-          echo "CHANGED_FILES=$files" >> $GITHUB_ENV
-
-      - name: Echo changed files
-        run: |
-          for file in $CHANGED_FILES; do
+          for file in $files; do
             echo "Changed file: $file"
           done
