@@ -33,5 +33,5 @@ jobs:
         run: |
           files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- code/terraform/deploy/'*.tf')
           for file in $files; do
-            echo "Changed file: $file"
+            # echo "Changed file: $file"
           done
