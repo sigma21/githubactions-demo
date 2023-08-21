@@ -31,10 +31,9 @@ jobs:
 
       - name: Get and echo list of changed files
         run: |
-          files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- code/terraform/deploy/'*.tf')
-          echo "MODIFIED_FILES=$files" >> $GITHUB_ENV
-          if [ ! -z "$MODIFIED_FILES" ]; then
+          files=$(git diff --name-only --diff-filter=M ${{ github.event.before }} ${{ github.sha }} -- code/terraform/deploy/'*.tf')
+          if [ ! -z "$files" ]; then
             for file in $files; do
-              # echo "Changed file: $file"
+              echo "Modified file (excluding deleted ones): $file"
             done
           fi
