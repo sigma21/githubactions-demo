@@ -51,5 +51,5 @@ feature:
 release:
  - base-branch: 'main'
 
-reverted-pr"
+reverted-pr:
   - head-branch: ['^revert', 'revert']
