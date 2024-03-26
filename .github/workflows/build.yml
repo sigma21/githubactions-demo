@@ -1,0 +1,44 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    types: [opened, synchronize, reopened]
+  merge_group:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      
+      - name: Check for Specific Label
+        id: check-label
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const labelToCheck = "reverted-pr";
+            const { owner, repo, number } = context.issue;
+            
+            const response = await github.rest.issues.listLabelsOnIssue({
+              owner,
+              repo,
+              issue_number: number
+            });
+            
+            const labels = response.data.map(label => label.name);
+            const hasLabel = labels.includes(labelToCheck);
+
+            core.setOutput("hasLabel", hasLabel;
+
+      - name: Check last release status
+        if:  ${{ steps.check-label.outputs.hasLabel == 'false' && github.ref != 'refs/heads/main' }} # skip in revert or main branch
+        run: curl "https://sede-ds-adp.vsrm.visualstudio.com/_apis/public/Release/badge/a4a10285-1340-4018-ac42-4ac7c489edcb/52/182" | grep -q "succeeded"
+      
