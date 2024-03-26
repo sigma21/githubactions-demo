@@ -36,7 +36,7 @@ jobs:
             const labels = response.data.map(label => label.name);
             const hasLabel = labels.includes(labelToCheck);
 
-            core.setOutput("hasLabel", hasLabel;
+            core.setOutput("hasLabel", hasLabel);
 
       - name: Check last release status
         if:  ${{ steps.check-label.outputs.hasLabel == 'false' && github.ref != 'refs/heads/main' }} # skip in revert or main branch
