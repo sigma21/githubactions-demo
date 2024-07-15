@@ -4,9 +4,7 @@
         "path":"code",
         "release-type":"python"
       },
-      "package-name": "test",
       "labels": true,
-      "release-type": "simple",
       "changelog-sections": [
         { "type": "feat", "section": "🚀 New Features", "hidden": false },
         { "type": "feature", "section": "🚀 New Features", "hidden": false },
